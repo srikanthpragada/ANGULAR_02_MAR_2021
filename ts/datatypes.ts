@@ -9,8 +9,8 @@ console.log(username)
 console.log(email);
 
 
-let uname : string = "Srikanth";
-let subject : string = "Angular";
+var uname : string = "Srikanth";
+var subject : string = "Angular";
 // String interpolation 
-let sentence: string =`Hello, I am ${uname } and I am your ${subject} trainer!`
+var sentence: string =`Hi, I am ${uname } and I am your ${subject} trainer!`
 console.log(sentence)
