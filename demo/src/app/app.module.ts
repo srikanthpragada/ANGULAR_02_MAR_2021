@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HelloComponent } from './hello/hello.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
-       HelloComponent
+       TeamComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [HelloComponent ]
+  bootstrap: [TeamComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,28 @@
+<h1>{{teamname}}</h1>
+
+<div *ngIf="players.length > 0">
+    <h2>Players</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let p of players;let idx = index">
+            <td>
+                {{p.name}}
+            </td>
+            <td>
+                {{p.age}}
+            </td>
+            <td>
+                <button (click)="deletePlayer(idx)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h3>Add Player</h3>
+Name : <input type="text" #pname /> Age <input type="number" #page />
+<br />
+<button (click)="addPlayer(pname.value,page.value)">Add</button>
