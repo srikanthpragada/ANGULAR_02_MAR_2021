@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TeamComponent } from './team/team.component';
+import { BindingsComponent } from './bindings/bindings.component';
 
 @NgModule({
   declarations: [
-       TeamComponent
+       BindingsComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [TeamComponent ]
+  bootstrap: [BindingsComponent ]
 })
 export class AppModule { }
