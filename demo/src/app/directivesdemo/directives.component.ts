@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'st-directives',
-  templateUrl: './directives.component.html',
-  styleUrls: ['./directives.component.css']
+  templateUrl: './directives.component.html'
 })
 export class DirectivesComponent  {
   code : number = 2;

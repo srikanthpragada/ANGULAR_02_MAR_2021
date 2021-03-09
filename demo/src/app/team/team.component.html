@@ -6,6 +6,7 @@
         <tr>
             <th>Name</th>
             <th>Age</th>
+            <th>Position</th>
             <th></th>
         </tr>
         <tr *ngFor="let p of players;let idx = index">
@@ -16,7 +17,11 @@
                 {{p.age}}
             </td>
             <td>
-                <button (click)="deletePlayer(idx)">Delete</button>
+                {{p.position}} 
+            </td>
+            <td>
+                <button [attr.title]="'Delete ' + p.name "
+                 (click)="deletePlayer(idx)">Delete</button>
             </td>
         </tr>
     </table>
@@ -24,7 +29,14 @@
 
 <h3>Add Player</h3>
 Name : <input type="text" #pname /> Age <input type="number" #page />
+Position : <select #position>
+    <option>Select Position</option>
+    <option>GoalKeeper</option>
+    <option>Defender</option>
+    <option>Forward</option>
+    <option>Midfield</option>
+</select>
 <br />
-<button (click)="addPlayer(pname.value,page.value)">Add</button>
+<button (click)="addPlayer(pname.value,page.value, position.value)">Add</button>
 <p></p>
 <h4>{{message}}</h4>

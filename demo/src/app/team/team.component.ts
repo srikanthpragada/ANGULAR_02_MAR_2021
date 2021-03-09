@@ -8,20 +8,28 @@ import { Player } from './Player';
 export class TeamComponent {
     message : string = '';
     teamname : string = "Real Madrid"
-    players : Player[] = [ new Player("Ronaldo",28), new Player("Rahul",30),
-                           new Player("Carlos",31)];
+    players : Player[] = [ new Player("Ronaldo",28,"Forward"),
+                           new Player("Rahul",30,"Forward"),
+                           new Player("Carlos",31,"Defender")];
 
-    constructor() { }
+    constructor() {
+        console.log(this.players)
+     }  
   
-
-    addPlayer(name : string, age :number) {
+    addPlayer(name : string, age :number, position : string = "") {
         this.message = "";
+        if(position == "Select Position")
+        {
+            this.message = "Please select position";
+            return;
+        }
+
         // Check whether player is already present
         if (this.players.some(p => p.name == name))
         {
             this.message = "Name is already present!";
             return;
-        }
+        } 
 
         if(age < 15 || age > 60)
         {
@@ -29,7 +37,7 @@ export class TeamComponent {
             return;
         }
 
-        this.players.push( new Player(name,age))
+        this.players.push( new Player(name,age, position))
     }
 
     deletePlayer(idx:number) {
