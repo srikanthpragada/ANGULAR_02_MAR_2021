@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BracketsPipe } from './pipes/brackets.pipe';
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
+import { CounterComponent } from './counter/counter.component';
+import { CounterService } from './counter/counter.service';
+import { Counter2Component } from './counter/counter2.component';
+ 
 
 @NgModule({
   declarations: [
-       PipesDemoComponent, BracketsPipe
+       CounterComponent, Counter2Component
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [PipesDemoComponent ]
+  providers: [CounterService],
+  bootstrap: [CounterComponent, Counter2Component ]
 })
 export class AppModule { }
