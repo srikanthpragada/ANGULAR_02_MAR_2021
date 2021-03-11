@@ -30,11 +30,12 @@
 </div>
 <input type="checkbox" #big (click)="true">Big Letters 
 <input type="checkbox" #red (click)="true">Red Letters 
-<h3>Angular</h3>
-<select>
-
+<h3 [style.color]="color.value">Angular</h3>
+<select #color (change)="true">
+   <option>Red</option>
+   <option>Green</option>
+   <option>Blue</option>
 </select>
-
 
 <hr/>
 

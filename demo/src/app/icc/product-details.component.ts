@@ -17,7 +17,8 @@ export class ProductDetailsComponent {
 
     deleteProduct() {
         // raise event and pass id as parameter 
-        this.delete.emit(this.id);
+        if(confirm("Do you want to delete?"))
+            this.delete.emit(this.id);
     }
 
     showBestPrice() {
