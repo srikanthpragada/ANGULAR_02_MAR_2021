@@ -10,11 +10,12 @@
 
 <form (ngSubmit)="register(regForm)" #regForm="ngForm" novalidate>
     User's Name <br />
-    <input type="text" [(ngModel)]="uname" name="uname" required 
+    <input type="text" [(ngModel)]="uname" name="fullname" 
+                       required 
                        minlength="5"
-                       pattern="[A-Za-Z ]+"
+                       pattern="[A-Za-z ]+"
                        #username="ngModel" />
-
+  
      <span *ngIf="username.errors?.minlength">
           Required length is {{username.errors.minlength.requiredLength}} but you entered only 
               {{username.errors.minlength.actualLength}}
@@ -24,16 +25,24 @@
          Please enter username!
      </span>
 
-
-    <!-- <span *ngIf="regForm.submitted">
+     <span *ngIf="username.errors?.pattern">
+        Please enter only alphabets and spaces!   
+     </span>
+    
+<!--
+    <span *ngIf="regForm.submitted">
         <span *ngIf="username.errors?.required">Missing username</span>
         <span *ngIf="username.errors?.minlength">Minimum length is 
                       {{username.errors.minlength.requiredLength}}</span>
-    </span> -->
+    </span> 
+-->
 
     <p></p>
     User's Age <br />
-    <input type="number" [(ngModel)]="age" name="age" required #agerv="ngModel" />
+    <input type="number" [(ngModel)]="age" 
+           name="age" 
+           required 
+           #agerv="ngModel" />
     <span *ngIf="regForm.submitted">
         <span *ngIf="agerv.errors?.required">Missing Age</span>
     </span>

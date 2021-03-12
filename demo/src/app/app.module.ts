@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { ProductDetailsComponent } from './icc/product-details.component';
-import { ProductsListComponent } from './icc/products-list.component';
+import { RegisterComponent } from './forms/register.component';
+
  
 @NgModule({
   declarations: [
-      ProductsListComponent, ProductDetailsComponent
+      RegisterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [ProductsListComponent]
+  bootstrap: [RegisterComponent]
 })
 export class AppModule { }
