@@ -67,7 +67,7 @@ export class RLoginComponent {
         var un = group.value['username']
         var pwd = group.value['password']
         if(un.length == pwd.length)
-           return {'match' : 'Username and password are of same length' }  // Object on error 
+           return {match : 'Username and password are of same length' }  // Object on error 
         else
            return null; // Success 
     }
