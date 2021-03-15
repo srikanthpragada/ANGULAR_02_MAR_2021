@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from './Book';
 import { HttpClient , HttpErrorResponse} from '@angular/common/http';
-import { timer } from 'rxjs';
 
 @Component({
     selector: 'st-books',

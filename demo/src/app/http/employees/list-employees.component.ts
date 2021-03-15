@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { WebBook } from './WebBook';
 import { HttpClient } from '@angular/common/http'
+import { Employee } from './Employee';
 
 @Component({
-    selector: 'st-books',
-    templateUrl: './webbooks.component.html'
+    selector: 'st-employees',
+    templateUrl: './list-employees.component.html'
 })
-export class WebBooksComponent implements OnInit {
-    books: WebBook[];
+export class ListEmployeesComponent implements OnInit {
+    employees : Employee[];
     done : boolean = false;
     constructor(private http: HttpClient) {
     }
 
     ngOnInit() {
         this.done = false;
-        this.http.get<WebBook[]>("http://test.srikanthpragada.com/api/books")
+        this.http.get<Employee[]>("http://localhost:3000/employees")
             .subscribe(
-                 (result : WebBook[]) => this.books = result,
+                 (result : Employee[]) => this.employees = result,
                  error => console.log(error),
                  () => this.done = true
                  );

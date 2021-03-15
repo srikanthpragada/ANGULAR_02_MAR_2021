@@ -1,0 +1,19 @@
+<h1>Employees</h1>
+    
+<div *ngIf="!done">
+    <img src="assets/ajaxicon.gif"/>
+</div>
+
+ <table *ngIf="done" border="1" style="width:100%">
+     <tr>
+         <th>Id</th>
+         <th>Name </th>
+         <th>Job </th>
+     </tr>
+     <tr *ngFor="let e of employees">
+         <td> {{ e.id }} </td>
+         <td> {{ e.name }} </td>
+         <td> {{ e.job }} </td>
+     </tr>
+ </table>
+

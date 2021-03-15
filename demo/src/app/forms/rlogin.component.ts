@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, AbstractControl, Validators, AbstractControlOptions } from '@angular/forms';
 
 @Component({
     selector: 'st-login',
@@ -33,7 +33,7 @@ export class RLoginComponent {
                     )
                 ] 
             },
-            {validators : this.validateUsernamePassword}  // Form Validation
+            {validators : [this.validateUsernamePassword]}  // Form Validation
         )
 
         // this.loginForm.setValidators(this.validateUsernamePassword);
@@ -51,7 +51,7 @@ export class RLoginComponent {
     }
 
     //  Must return null on success, object on error 
-    mustHaveStar(formControl: FormControl) {
+    mustHaveStar(formControl: AbstractControl) {
         // do not validate if value is missing 
         if (formControl.value.length == 0)
             return null;  // success
@@ -63,7 +63,7 @@ export class RLoginComponent {
     }
 
     // Validator for form - Takes FormGroup and returns null or object 
-    validateUsernamePassword(group : FormGroup) {
+    validateUsernamePassword(group : AbstractControl) {
         var un = group.value['username']
         var pwd = group.value['password']
         if(un.length == pwd.length)

@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jason Hunter",
+      "job": "Programmer"
+    },
+    {
+      "id": 2,
+      "name": "Scott Mitchell",
+      "job": "DBA"
+    },
+    {
+      "id": 3,
+      "name": "James Gosling",
+      "job": "Team Lead"
+    },
+    {
+      "name": "new employee",
+      "job": "new job",
+      "id": 4
+    },
+    {
+      "name": "Stephen Walther",
+      "job": "Sr. Programmer",
+      "id": 5
+    },
+    {
+      "name": "Jessy",
+      "job": "Sr. Prog",
+      "id": 6
+    }
+  ]
+}

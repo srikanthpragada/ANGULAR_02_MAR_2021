@@ -17,8 +17,8 @@ export class CountriesComponent implements OnInit {
          this.http.get<Country[]>("https://restcountries.eu/rest/v2/all")
              .subscribe(
                         (resp : Country[]) => {
+                            console.log(resp);
                             this.countries = resp;
-                            console.log(this.countries);
                         },
                         (error) => console.log(error)
                        );

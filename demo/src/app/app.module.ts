@@ -1,18 +1,19 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RLoginComponent } from './forms/rlogin.component';
+import { CountryinfoComponent } from './http/countryinfo/countryinfo.component';
 
- 
 @NgModule({
   declarations: [
-      RLoginComponent
+      CountryinfoComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [RLoginComponent]
+  bootstrap: [CountryinfoComponent]
 })
 export class AppModule { }

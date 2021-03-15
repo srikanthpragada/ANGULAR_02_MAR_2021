@@ -23,6 +23,7 @@ export class CountryinfoComponent implements OnInit {
                 .subscribe( 
                    info => this.country = info,
                    e =>  {
+                       console.log(e)
                        this.message = "Country Not Found"
                    }
                   )

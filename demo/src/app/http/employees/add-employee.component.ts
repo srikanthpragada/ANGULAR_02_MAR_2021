@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
-import { WebBook } from '../webbooks/WebBook';
+import { Employee } from './employee';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'st-add-book',
-  templateUrl: './add-book.component.html'
+  selector: 'st-add-employee',
+  templateUrl: './add-employee.component.html'
 })
-export class AddBookComponent {
-  book: WebBook;
+export class AddEmployeeComponent {
+  employee : Employee;
   done: boolean = false;
   inprocess: boolean = false;
   added: boolean = false;
 
   constructor(private http: HttpClient) {
-    this.book = new WebBook();
+    this.employee = new Employee();
   }
 
-  addBook() {
+  addEmployee() {
     // call restful service  
     this.done = false;
     this.added = false;
     this.inprocess = true;
-    this.http.post("http://test.srikanthpragada.com/api/books", this.book)
+    this.http.post("http://localhost:3000/employees", this.employee)
       .subscribe(result => {
         this.added = true;
         this.done = true;
