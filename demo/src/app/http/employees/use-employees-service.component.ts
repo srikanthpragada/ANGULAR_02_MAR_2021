@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { Employee } from './Employee';
 import { EmployeesService } from './EmployeesService';
 
@@ -12,12 +11,12 @@ import { EmployeesService } from './EmployeesService';
 export class UseEmployeesServiceComponent implements OnInit {
     employees : Employee[];
     done : boolean = false;
-    constructor(private employeeService : EmployeesService) {
+    constructor(private employeesService : EmployeesService) {
     }
 
     ngOnInit() {
         this.done = false;
-        this.employeeService.getEmployees()
+        this.employeesService.getEmployees()
             .subscribe(
                  (result : Employee[]) => this.employees = result,
                  error => console.log(error),

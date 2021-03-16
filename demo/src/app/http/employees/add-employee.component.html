@@ -6,17 +6,17 @@
     <h1>Add Employee </h1>
     <form (ngSubmit)="addEmployee()" #employeeForm="ngForm"  novalidate>
         Employee Name <br>
-        <input name="name" [(ngModel)]="employee.name" #title="ngModel" required>
+        <input name="name" [(ngModel)]="employee.name" #name="ngModel" required>
         <p></p>
         Employee Job <br>
-        <input name="job" [(ngModel)]="employee.job" #price="ngModel" required>
+        <input name="job" [(ngModel)]="employee.job" #job="ngModel" required>
         <p></p>
         <button [disabled]="employeeForm.invalid">Add Employee</button>
         <div *ngIf="inprocess">Processing....</div>
     </form>
 
     <div *ngIf="done">
-        <h3 *ngIf="added">Employee has been added successfully!</h3>
+        <h3 *ngIf="added">Employee with id [{{employee.id}}] has been added successfully!</h3>
         <h3 *ngIf="!added">Employee was not added due to some error!!</h3>
     </div>
 

@@ -29,6 +29,16 @@
       "name": "Jessy",
       "job": "Sr. Prog",
       "id": 6
+    },
+    {
+      "name": "Jason Hunter",
+      "job": "TL",
+      "id": 7
+    },
+    {
+      "name": "Anders",
+      "job": "PM",
+      "id": 8
     }
   ]
 }

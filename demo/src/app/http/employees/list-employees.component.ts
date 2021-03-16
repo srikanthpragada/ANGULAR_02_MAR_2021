@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Employee } from './Employee';
+import { EmployeeUtil } from './EmployeeUtil';
 
 @Component({
     selector: 'st-employees',
@@ -14,10 +15,13 @@ export class ListEmployeesComponent implements OnInit {
 
     ngOnInit() {
         this.done = false;
-        this.http.get<Employee[]>("http://localhost:3000/employees")
+        this.http.get<Employee[]>(EmployeeUtil.URL)
             .subscribe(
                  (result : Employee[]) => this.employees = result,
-                 error => console.log(error),
+                 error => {
+                     console.log(error);
+                     this.done = true;
+                 },
                  () => this.done = true
                  );
 

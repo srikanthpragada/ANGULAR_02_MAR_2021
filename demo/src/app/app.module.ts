@@ -2,11 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { CountryinfoComponent } from './http/countryinfo/countryinfo.component';
+import { RegionCountriesComponent } from './countries_by_region/region-countries.component';
 
 @NgModule({
   declarations: [
-      CountryinfoComponent
+       RegionCountriesComponent
   ],
   imports: [
     BrowserModule,
@@ -14,6 +14,6 @@ import { CountryinfoComponent } from './http/countryinfo/countryinfo.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [CountryinfoComponent]
+  bootstrap: [RegionCountriesComponent]
 })
 export class AppModule { }

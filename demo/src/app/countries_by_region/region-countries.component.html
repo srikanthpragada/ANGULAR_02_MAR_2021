@@ -1,0 +1,29 @@
+<style>
+  body {font: calibri 12pt}
+</style>
+<h2>Countries By Region</h2>
+Select Region :
+<select #region>
+    <option *ngFor="let r of regions">
+        {{r}}
+    </option>
+</select>
+<p></p>
+<button (click)="getCountriesByRegion(region.value)">Countries</button>
+<p></p>
+<table width="100%" *ngIf="selectedCountries" cellpadding="5px" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Population</th>
+        <th>Area</th>
+        <th>Flag</th>
+    </tr>
+    <tr *ngFor="let c of selectedCountries">
+        <td>{{c.name}}</td>
+        <td>{{c.capital}}</td>
+        <td style="text-align: right;">{{c.population}}</td>
+        <td style="text-align: right;">{{c.area}}</td>
+        <td style="text-align: center"><img [src]="c.flag" style="border:2px solid black;width:100px;height:50px" /></td>
+    </tr>
+</table>
